@@ -6,7 +6,7 @@ const Search = () => {
   return (
     <div className="search">
       <div className="searchIconContainer">
-        <SearchIcon className="searchIcon"/>
+        <SearchIcon className="searchIcon" />
       </div>
       <InputBase
         placeholder="Search…"
@@ -14,7 +14,7 @@ const Search = () => {
         inputProps={{ 'aria-label': 'search' }}
       />
     </div>
-  )
-}
+  );
+};
 
 export default Search;
