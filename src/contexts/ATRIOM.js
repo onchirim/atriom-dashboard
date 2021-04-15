@@ -28,6 +28,9 @@ export default [
     id: 'checkout',
     name: 'checkout',
     remote: 'http://localhost:8081/remoteEntry.js',
+    data: {
+      link: '/app/checkout',
+    },
     overrides: [
       {
         id: 'react',
@@ -156,6 +159,9 @@ export default [
     id: 'home',
     name: 'home',
     remote: 'http://localhost:8080/remoteEntry.js',
+    data: {
+      link: '/app/home',
+    },
     overrides: [
       {
         id: 'react',
@@ -351,6 +357,9 @@ export default [
     id: 'search',
     name: 'search',
     remote: 'http://localhost:8082/remoteEntry.js',
+    data: {
+      link: '/app/search',
+    },
     overrides: [
       {
         id: 'react',

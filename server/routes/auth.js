@@ -10,8 +10,16 @@ router.get('/current-user', authController.getCurrentUser, (req, res) => {
   return res.status(200).json({ user: res.locals.user });
 });
 
-router.post('/signup', authController.createUser, (req, res) => {
-  return res.status(200).json({ user: res.locals.user });
+// router.post('/signup', authController.createUser, (req, res) => {
+//   return res.status(200).json({ user: res.locals.user });
+// });
+
+// router.post('/login', authController.verifyUser, (req, res) => {
+//   return res.status(200).json({ user: res.locals.user });
+// });
+
+router.post('/logout', (req, res) => {
+  return res.status(204);
 });
 
 module.exports = router;

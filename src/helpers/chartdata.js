@@ -9,6 +9,7 @@ export const createAppList = (apps) => {
       accessor: `${apps[i].id}`,
     });
   }
+  //console.log(appList);
   return appList;
 };
 

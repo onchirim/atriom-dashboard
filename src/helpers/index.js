@@ -29,10 +29,8 @@ export const convertAppObj = (apps, colorMap) =>
       overrides,
     };
     appFlowObj.data.consumesNodes = convertConsumedModules(consumes, colorMap);
-
     appFlowObj.data.color = colorMap[app.id];
     appFlowObj.data.link = `/app/${id}`;
-
     return appFlowObj;
   });
 
@@ -86,11 +84,11 @@ export const locationsMap = (apps) => {
     return apps.map((app, i) => {
       app.position = appLocations[i];
       return app;
-    })
+    });
   } else {
     let columns = 0;
     let x = -350;
-    let y = -200
+    let y = -200;
     return apps.map((app, i) => {
       if (i % 5 === 0) {
         y += 430;
@@ -101,6 +99,6 @@ export const locationsMap = (apps) => {
 
       app.position = { x, y };
       return app;
-    })
+    });
   }
-}
+};
