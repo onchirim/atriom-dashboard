@@ -12,29 +12,29 @@ import '../styles/AppPage.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const App = () => {
-  const { apps } = useContext(AppsContext);
-  console.log(apps);
+  const { apps, loading } = useContext(AppsContext);
+
   const renderAppRoutes = () =>
     apps.map((app, i) => (
       <Route key={`AppRoute${i}`} path={`/app/${app.id}`} exact>
         <AppPage app={app} />
       </Route>
     ));
+
   if (apps.length)
     return (
       <Router>
         <div className="App">
           <NavBar />
           <Switch>
-            {/* <Route path="/" exact component={DropZoneContainer} /> */}
             <Route path="/" exact component={FlowContainer} />
-            <Route path="/home" exact component={FlowContainer} />
             {renderAppRoutes()}
             <Route path="/dependencies" component={DependencyChart} />
           </Switch>
         </div>
       </Router>
     );
+  else if (loading) return <div className="App"></div>;
   else
     return (
       <Router>
